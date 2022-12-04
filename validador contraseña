@@ -1,0 +1,25 @@
+contraseña=input("Escribe tu contraseña: ")
+password="Radiador32"
+
+def validadorcontraseña(contraseña):
+    valor=True
+    numeros=contraseña[8:]
+    if (len(contraseña)!=10):
+        print("Contraseña incorrecta. No tiene la longitud requerida.")
+        valor=False
+    if (contraseña.islower() or contraseña.isupper()):
+        print("Contraseña incorrecta. Debe incluir myúsculas y minúsculas")
+        valor=False
+    if (contraseña.isdigit()):
+        print("Contraseña incorrecta. Debe incluir números")
+        valor=False
+    if (valor==True):
+        return (valor)
+validadorcontraseña(contraseña)
+
+def validadorcontraseña1():
+    if(validadorcontraseña(contraseña)):
+        print("Contraseña correcta")
+    else:
+        print("Contraseña incorrecta")
+validadorcontraseña1()
