@@ -1,0 +1,40 @@
+def acceso():
+    N1b=float(input("Escribe tu nota de 1º de bachillerato "))
+    N2b=float(input("Escribe tu nota de 2º de bachillerato "))
+    if(N1b>10 or N2b>10):
+        print("Notas no validas")
+        acceso()
+    else:
+        NMB=(N1b+N2b)/2
+        print(f"Tu nota media de bachillerato es {NMB}")
+        print("")
+    nota1=float(input("Introduce la nota de Lengua: "))
+    nota2=float(input("Introduce la nota de Mates: "))
+    nota3=float(input("Introduce la nota de Inglés: "))
+    nota4=float(input("Introduce la nota de Historia: "))
+    NME=(nota1+nota2+nota3+nota4)/4
+    print(f"Tu nota media de las optativas es {NME}")
+    if(NME<4):
+        print("No has obtenido suficiente nota, intentalo al año que viene")
+    else:
+        notaacceso=(NMB*0.6)+(NME*0.4)
+        notaacceso=round(notaacceso,1)
+        print(f"Tu nota de acceso es {notaacceso}")
+        if(notaacceso<5):
+            print("Estas suspenso, intentalo al año que viene.")
+        else:
+            print("")
+            print("Introduce las notas de las 2 optativas en las que tenga mayor nota" )
+            optativa1=float(input("Optativa 1 : "))
+            optativa2=float(input("Optativa 2 : "))
+            print("")
+            print("Ahora introduce por cuanto pondera cada una")
+            pond1=float(input("Optativa 1: "))
+            pond2=float(input("Optativa 2: "))
+            if(pond1<0 or pond1>0.2 or pond2<0 or pond2>0.2):
+                print("Ponderaciones no validas, vuelve a introducirlas")
+                ponderaciones()
+            else:
+                notaevau=notaacceso+(optativa1*pond1)+(optativa2*pond2)
+                print(f"Tu nota final de la evau es {notaevau}")
+acceso()
