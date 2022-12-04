@@ -1,0 +1,22 @@
+def ej():
+    lengua=int(input("Introduce la nota de Lengua: "))
+    ingles=int(input("Introduce la nota de Ingles: "))
+    mates=int(input("Introduce la nota de Mates: "))
+    historia=int(input("Introduce la nota de Historia: "))
+    fisica=int(input("Introduce la nota de Fisica: "))
+    dibujo=int(input("Introduce la nota de Dibujo: "))
+    notas=lengua,ingles,mates,historia,fisica,dibujo
+    if(lengua<0 or lengua>10 or ingles<0 or ingles>10 or mates<0 or mates>10 or historia<0 or historia>10 or fisica<0 or fisica>10 or dibujo<0 or dibujo>10 ):
+        print("Notas no validas")
+        ej()
+    else:
+        print("La nota maxima es ",max(notas))
+        print("La nota minima es ",min(notas))
+        print("El rango es",(max(notas)-min(notas)))
+        media=float((lengua+ingles+mates+historia+dibujo+fisica)/6)
+        desviacion=((abs(lengua-media)+abs(ingles-media)+abs(mates-media)+abs(historia-media)+abs(fisica-media)+abs(dibujo-media))/media)
+        desviacion1=round(desviacion)
+        print("La desviacion es ",desviacion1)
+        total=round(media,2)
+        print("La media es",total)
+ej()
