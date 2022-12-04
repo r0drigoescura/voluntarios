@@ -1,0 +1,24 @@
+def nif():
+    n=int(input("Introduce el número del DNI:"))
+    palabra="TRWAGMYFPDXBNJZSQVHLCKE"
+    print("Tu numero del DNI es: " + palabra[n%23])
+nif()
+
+
+def nif():
+    dni=input("Introduce tu DNI ")
+    if(len(dni)>8):
+        print("El numero del DNI no es correcto")
+        nif()
+    else:
+        palabra="TRWAGMYFPDXBNJZSQVHLCKE"
+        numero=int(dni[0:8])
+        letra=dni[8:]
+        resto=numero%23
+        if(letra==palabra[resto]):
+            print ("DNI correcto")
+        else:
+            print("DNI incorrecto")
+            print("")
+            nif()
+nif()
